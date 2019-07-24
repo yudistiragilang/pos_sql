@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Produk By Mfikri.com">
-    <meta name="author" content="M Fikri Setiadi">
-
+    <meta name="description" content="Produk By Squad Qurang Liburan">
+    <meta name="author" content="POS SQL">
+    
     <title>Transaksi Penjualan</title>
 
     <!-- Bootstrap Core CSS -->
