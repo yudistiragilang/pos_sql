@@ -11,7 +11,7 @@
  Target Server Version : 100316
  File Encoding         : 65001
 
- Date: 24/07/2019 22:55:46
+ Date: 24/07/2019 23:59:12
 */
 
 SET NAMES utf8mb4;
@@ -27,8 +27,26 @@ CREATE TABLE `tbl_audit_master`  (
   `tabel` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `oleh` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `created_date` timestamp(0) NULL DEFAULT NULL,
+  `src_id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbl_audit_master
+-- ----------------------------
+INSERT INTO `tbl_audit_master` VALUES (1, 'Insert', 'tbl_kategori', '1', '2019-07-24 23:42:11', '1');
+INSERT INTO `tbl_audit_master` VALUES (2, 'Insert', 'tbl_kategori', '1', '2019-07-24 23:42:15', '2');
+INSERT INTO `tbl_audit_master` VALUES (3, 'Insert', 'tbl_kategori', '1', '2019-07-24 23:42:38', '3');
+INSERT INTO `tbl_audit_master` VALUES (4, 'Update', 'tbl_kategori', '1', '2019-07-24 23:45:12', '2');
+INSERT INTO `tbl_audit_master` VALUES (5, 'Insert', 'tbl_uom', '1', '2019-07-24 23:48:05', '1');
+INSERT INTO `tbl_audit_master` VALUES (6, 'Insert', 'tbl_uom', '1', '2019-07-24 23:48:14', '2');
+INSERT INTO `tbl_audit_master` VALUES (7, 'Insert', 'tbl_uom', '1', '2019-07-24 23:48:20', '3');
+INSERT INTO `tbl_audit_master` VALUES (8, 'Update', 'tbl_uom', '1', '2019-07-24 23:48:55', '3');
+INSERT INTO `tbl_audit_master` VALUES (9, 'Delete', 'tbl_uom', '1', '2019-07-24 23:49:04', '3');
+INSERT INTO `tbl_audit_master` VALUES (10, 'Insert', 'tbl_barang', '1', '2019-07-24 23:53:41', '0');
+INSERT INTO `tbl_audit_master` VALUES (11, 'Insert', 'tbl_barang', '1', '2019-07-24 23:55:56', '0');
+INSERT INTO `tbl_audit_master` VALUES (12, 'Insert', 'tbl_barang', '1', '2019-07-24 23:57:31', 'BR000003');
+INSERT INTO `tbl_audit_master` VALUES (13, 'Update', 'tbl_barang', '1', '2019-07-24 23:58:05', 'BR000002');
 
 -- ----------------------------
 -- Table structure for tbl_barang
@@ -51,6 +69,13 @@ CREATE TABLE `tbl_barang`  (
   INDEX `barang_user_id`(`barang_user_id`) USING BTREE,
   INDEX `barang_kategori_id`(`barang_kategori_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbl_barang
+-- ----------------------------
+INSERT INTO `tbl_barang` VALUES ('BR000001', 'Pensil', 1000, 1500, 1200, 10, 5, '2019-07-24 23:53:41', NULL, 1, 1, 1);
+INSERT INTO `tbl_barang` VALUES ('BR000002', 'Buku Tulis', 2000, 2500, 2200, 10, 5, '2019-07-24 23:55:56', '2019-07-24 23:58:05', 1, 1, 1);
+INSERT INTO `tbl_barang` VALUES ('BR000003', 'Bola Sepak', 4000, 5000, 4500, 5, 2, '2019-07-24 23:57:31', NULL, 3, 1, 1);
 
 -- ----------------------------
 -- Table structure for tbl_beli
@@ -130,7 +155,14 @@ CREATE TABLE `tbl_kategori`  (
   `kategori_id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori_nama` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`kategori_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbl_kategori
+-- ----------------------------
+INSERT INTO `tbl_kategori` VALUES (1, 'Alat Tulis');
+INSERT INTO `tbl_kategori` VALUES (2, 'Alat peraga');
+INSERT INTO `tbl_kategori` VALUES (3, 'Alat Olahraga');
 
 -- ----------------------------
 -- Table structure for tbl_retur
@@ -170,7 +202,13 @@ CREATE TABLE `tbl_uom`  (
   `nama` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `description` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbl_uom
+-- ----------------------------
+INSERT INTO `tbl_uom` VALUES (1, 'Pcs', 'Pieces');
+INSERT INTO `tbl_uom` VALUES (2, 'Dos', 'Dos');
 
 -- ----------------------------
 -- Table structure for tbl_user
