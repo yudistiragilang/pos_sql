@@ -41,7 +41,11 @@ class Barang extends CI_Controller{
 			$harjul_grosir=str_replace(',', '', $this->input->post('harjul_grosir'));
 			$stok=$this->input->post('stok');
 			$min_stok=$this->input->post('min_stok');
-			$this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
+			$simpan = $this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
+
+			// audit 
+			$this->m_barang->audit_barang('Insert', 'tbl_barang', $simpan);
+			// audit 
 
 			redirect('admin/barang');
 		}else{
@@ -62,7 +66,12 @@ class Barang extends CI_Controller{
 			$harjul_grosir=str_replace(',', '', $this->input->post('harjul_grosir'));
 			$stok=$this->input->post('stok');
 			$min_stok=$this->input->post('min_stok');
-			$this->m_barang->update_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
+			$update = $this->m_barang->update_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
+
+			// audit 
+			$this->m_barang->audit_barang('Update', 'tbl_barang', $kobar);
+			// audit 
+
 			redirect('admin/barang');
 		}else{
 	        echo "Halaman tidak ditemukan";
@@ -74,7 +83,12 @@ class Barang extends CI_Controller{
 
 		if($this->session->userdata('akses')=='1'){
 			$kode=$this->input->post('kode');
-			$this->m_barang->hapus_barang($kode);
+			$hapus = $this->m_barang->hapus_barang($kode);
+
+			// audit 
+			$this->m_barang->audit_barang('Delete', 'tbl_barang', $kode);
+			// audit 
+
 			redirect('admin/barang');
 		}else{
 	        echo "Halaman tidak ditemukan";

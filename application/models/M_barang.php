@@ -42,7 +42,7 @@ class M_barang extends CI_Model{
 
 		$user_id=$this->session->userdata('idadmin');
 		$hsl=$this->db->query("INSERT INTO tbl_barang (barang_id, barang_nama, barang_uom_id, barang_harpok, barang_harjul, barang_harjul_grosir, barang_stok, barang_min_stok, barang_kategori_id, barang_user_id) VALUES ('$kobar','$nabar','$satuan','$harpok','$harjul','$harjul_grosir','$stok','$min_stok','$kat','$user_id')");
-		return $hsl;
+		return $this->db->insert_id();
 
 	}
 
@@ -68,6 +68,16 @@ class M_barang extends CI_Model{
         }
         return "BR".$kd;
 
+	}
+
+	function audit_barang($aksi, $tabel, $src_id){
+
+		$user_id=$this->session->userdata('idadmin');
+		$date = date('Y-m-d H:i:s');
+
+		$sql = $this->db->query("INSERT INTO tbl_audit_master (aksi, tabel, oleh, created_date, src_id) VALUES ('$aksi', '$tabel', '$user_id', '$date', '$src_id')");
+
+		return $sql;
 	}
 
 }
