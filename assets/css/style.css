@@ -153,6 +153,10 @@ fieldset[disabled] .btn-primary.active {
     background: #0ECEAB;
 }
 
+.uom {
+    background: #DA7A17;
+}
+
 .purple{
     background: #9b59b6;
 }
