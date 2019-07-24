@@ -42,7 +42,7 @@ class M_barang extends CI_Model{
 
 		$user_id=$this->session->userdata('idadmin');
 		$hsl=$this->db->query("INSERT INTO tbl_barang (barang_id, barang_nama, barang_uom_id, barang_harpok, barang_harjul, barang_harjul_grosir, barang_stok, barang_min_stok, barang_kategori_id, barang_user_id) VALUES ('$kobar','$nabar','$satuan','$harpok','$harjul','$harjul_grosir','$stok','$min_stok','$kat','$user_id')");
-		return $this->db->insert_id();
+		return $kobar;
 
 	}
 
