@@ -28,7 +28,12 @@ class Uom extends CI_Controller{
 		if($this->session->userdata('akses')=='1'){
 			$uom=$this->input->post('uom');
 			$des_uom=$this->input->post('des_uom');
-			$this->m_uom->simpan_uom($uom, $des_uom);
+			$simpan = $this->m_uom->simpan_uom($uom, $des_uom);
+
+			// audit 
+			$this->m_uom->audit_uom('Insert', 'tbl_uom', $simpan);
+			// audit
+
 			redirect('admin/uom');
 		}else{
 	        echo "Halaman tidak ditemukan";
@@ -42,7 +47,12 @@ class Uom extends CI_Controller{
 			$kode=$this->input->post('kode');
 			$uom=$this->input->post('uom');
 			$des_uom=$this->input->post('des_uom');
-			$this->m_uom->update_uom($kode, $uom, $des_uom);
+			$update = $this->m_uom->update_uom($kode, $uom, $des_uom);
+
+			// audit 
+			$this->m_uom->audit_uom('Update', 'tbl_uom', $kode);
+			// audit
+
 			redirect('admin/uom');
 		}else{
 	        echo "Halaman tidak ditemukan";
@@ -55,6 +65,11 @@ class Uom extends CI_Controller{
 		if($this->session->userdata('akses')=='1'){
 			$kode=$this->input->post('kode');
 			$this->m_uom->hapus_uom($kode);
+
+			// audit 
+			$this->m_uom->audit_uom('Delete', 'tbl_uom', $kode);
+			// audit
+
 			redirect('admin/uom');
 		}else{
 	        echo "Halaman tidak ditemukan";
