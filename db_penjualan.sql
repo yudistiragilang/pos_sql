@@ -11,11 +11,24 @@
  Target Server Version : 100316
  File Encoding         : 65001
 
- Date: 24/07/2019 22:48:52
+ Date: 24/07/2019 22:55:46
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for tbl_audit_master
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_audit_master`;
+CREATE TABLE `tbl_audit_master`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `aksi` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `tabel` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `oleh` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `created_date` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tbl_barang
