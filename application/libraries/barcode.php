@@ -22,7 +22,7 @@ error_reporting(0);
 	* Reference : http://www.barcodeisland.com/symbolgy.phtml
 	*/
 	
-	class BARCODE
+	class Barcode
 	{
 		var $_encode;
 		var $_error;
@@ -35,7 +35,7 @@ error_reporting(0);
 		var $_format;
 		var $_n2w;
 		
-		function BARCODE($encoding="EAN-13")
+		function __construct($encoding="EAN-13")
 		{
 			
 			if(!function_exists("imagecreate"))
