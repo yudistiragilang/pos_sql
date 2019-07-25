@@ -192,7 +192,7 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            //Ajax kabupaten/kota insert
+            
             $("#kode_brg").focus();
             $("#kode_brg").keyup(function(){
                 var kobar = {kode_brg:$(this).val()};
