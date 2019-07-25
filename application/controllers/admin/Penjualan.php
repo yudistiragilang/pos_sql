@@ -145,7 +145,7 @@ class Penjualan extends CI_Controller{
 					$this->session->set_userdata('nofak',$nofak);
 					$order_proses=$this->m_penjualan->simpan_penjualan($nofak,$total,$jml_uang,$kembalian);
 
-					// Audit Pembeliaan
+					// Audit Penjualan
 					$this->m_global->audit_master('Insert', 'tbl_jual', $order_proses);
 					//
 

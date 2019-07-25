@@ -17,13 +17,15 @@ class M_penjualan extends CI_Model{
 
 	function simpan_retur($kobar, $nabar, $satuan, $harjul, $qty, $keterangan){
 
-		$hsl=$this->db->query("INSERT INTO tbl_retur(retur_barang_id, retur_barang_nama, retur_barang_satuan, retur_harjul, retur_qty, retur_keterangan) VALUES ('$kobar', '$nabar', '$satuan', '$harjul', '$qty', '$keterangan')");
+		$subtotal = $harjul*$qty;
+		$hsl=$this->db->query("INSERT INTO tbl_retur(retur_barang_id, retur_barang_nama, retur_barang_satuan, retur_harjul, retur_qty, retur_subtotal, retur_keterangan) VALUES ('$kobar', '$nabar', '$satuan', '$harjul', '$qty', '$subtotal', '$keterangan')");
 		$stok_lama = $this->get_barang($kobar);
 		$stok_update = $stok_lama - $qty;
 
 		$this->db->query("UPDATE tbl_barang SET barang_stok =".$stok_update." WHERE barang_id='".$kobar."'");
 
-		return $hsl;
+		$get_retur_lastest = $this->get_retur_lastest();
+		return $get_retur_lastest;
 
 	}
 
@@ -107,6 +109,16 @@ class M_penjualan extends CI_Model{
 	    $this->db->from('tbl_barang');
 	    $this->db->where('barang_id',$kobar);
 	    return $this->db->get()->row()->barang_stok;
+	    
+	}
+
+	function get_retur_lastest(){
+
+		$this->db->select('retur_id');
+	    $this->db->from('tbl_retur');
+	    $this->db->order_by('retur_id','DESC');
+	    $this->db->limit('1');
+	    return $this->db->get()->row()->retur_id;
 	    
 	}
 	
