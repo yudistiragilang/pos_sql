@@ -11,6 +11,7 @@ class Barang extends CI_Controller{
 		$this->load->model('m_kategori');
 		$this->load->model('m_uom');
 		$this->load->model('m_barang');
+		$this->load->model('m_global');
 		$this->load->library('barcode');
 
 	}
@@ -44,7 +45,7 @@ class Barang extends CI_Controller{
 			$simpan = $this->m_barang->simpan_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
 
 			// audit 
-			$this->m_barang->audit_barang('Insert', 'tbl_barang', $simpan);
+			$this->m_global->audit_master('Insert', 'tbl_barang', $simpan);
 			// audit 
 
 			redirect('admin/barang');
@@ -69,7 +70,7 @@ class Barang extends CI_Controller{
 			$update = $this->m_barang->update_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok);
 
 			// audit 
-			$this->m_barang->audit_barang('Update', 'tbl_barang', $kobar);
+			$this->m_global->audit_master('Update', 'tbl_barang', $kobar);
 			// audit 
 
 			redirect('admin/barang');
@@ -86,7 +87,7 @@ class Barang extends CI_Controller{
 			$hapus = $this->m_barang->hapus_barang($kode);
 
 			// audit 
-			$this->m_barang->audit_barang('Delete', 'tbl_barang', $kode);
+			$this->m_global->audit_master('Delete', 'tbl_barang', $kode);
 			// audit 
 
 			redirect('admin/barang');

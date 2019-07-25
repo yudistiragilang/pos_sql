@@ -9,6 +9,7 @@ class Uom extends CI_Controller{
             redirect($url);
         };
 		$this->load->model('m_uom');
+		$this->load->model('m_global');
 
 	}
 
@@ -31,7 +32,7 @@ class Uom extends CI_Controller{
 			$simpan = $this->m_uom->simpan_uom($uom, $des_uom);
 
 			// audit 
-			$this->m_uom->audit_uom('Insert', 'tbl_uom', $simpan);
+			$this->m_global->audit_master('Insert', 'tbl_uom', $simpan);
 			// audit
 
 			redirect('admin/uom');
@@ -50,7 +51,7 @@ class Uom extends CI_Controller{
 			$update = $this->m_uom->update_uom($kode, $uom, $des_uom);
 
 			// audit 
-			$this->m_uom->audit_uom('Update', 'tbl_uom', $kode);
+			$this->m_global->audit_master('Update', 'tbl_uom', $kode);
 			// audit
 
 			redirect('admin/uom');
@@ -67,7 +68,7 @@ class Uom extends CI_Controller{
 			$this->m_uom->hapus_uom($kode);
 
 			// audit 
-			$this->m_uom->audit_uom('Delete', 'tbl_uom', $kode);
+			$this->m_global->audit_master('Delete', 'tbl_uom', $kode);
 			// audit
 
 			redirect('admin/uom');

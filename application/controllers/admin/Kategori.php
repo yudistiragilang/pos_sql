@@ -8,6 +8,7 @@ class Kategori extends CI_Controller{
             redirect($url);
         };
 		$this->load->model('m_kategori');
+		$this->load->model('m_global');
 	}
 
 	function index(){
@@ -28,7 +29,7 @@ class Kategori extends CI_Controller{
 			$simpan = $this->m_kategori->simpan_kategori($kat);
 
 			// audit 
-			$this->m_kategori->audit_kategori('Insert', 'tbl_kategori', $simpan);
+			$this->m_global->audit_master('Insert', 'tbl_kategori', $simpan);
 			// audit
 
 			redirect('admin/kategori');
@@ -46,7 +47,7 @@ class Kategori extends CI_Controller{
 			$update = $this->m_kategori->update_kategori($kode,$kat);
 
 			// audit 
-			$this->m_kategori->audit_kategori('Update', 'tbl_kategori', $kode);
+			$this->m_global->audit_master('Update', 'tbl_kategori', $kode);
 			// audit
 
 			redirect('admin/kategori');
@@ -63,7 +64,7 @@ class Kategori extends CI_Controller{
 			$hapus = $this->m_kategori->hapus_kategori($kode);
 
 			// audit 
-			$this->m_kategori->audit_kategori('Delete', 'tbl_kategori', $kode);
+			$this->m_global->audit_master('Delete', 'tbl_kategori', $kode);
 			// audit
 
 			redirect('admin/kategori');
