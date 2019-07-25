@@ -1,51 +1,102 @@
 <?php
 class Suplier extends CI_Controller{
+
 	function __construct(){
+
 		parent::__construct();
+
 		if($this->session->userdata('masuk') !=TRUE){
+
             $url=base_url();
             redirect($url);
+
         };
+
 		$this->load->model('m_suplier');
+
 	}
+
 	function index(){
-	if($this->session->userdata('akses')=='1'){
-		$data['data']=$this->m_suplier->tampil_suplier();
-		$this->load->view('admin/v_suplier',$data);
-	}else{
-        echo "Halaman tidak ditemukan";
-    }
+
+		if($this->session->userdata('akses')=='1'){
+
+			$data['data']=$this->m_suplier->tampil_suplier();
+			$this->load->view('admin/v_suplier',$data);
+
+		}else{
+
+	        echo "Halaman tidak ditemukan";
+
+	    }
+
 	}
+
 	function tambah_suplier(){
-	if($this->session->userdata('akses')=='1'){
-		$nama=$this->input->post('nama');
-		$alamat=$this->input->post('alamat');
-		$notelp=$this->input->post('notelp');
-		$this->m_suplier->simpan_suplier($nama,$alamat,$notelp);
-		redirect('admin/suplier');
-	}else{
-        echo "Halaman tidak ditemukan";
-    }
+
+		if($this->session->userdata('akses')=='1'){
+
+			$nama=$this->input->post('nama');
+			$alamat=$this->input->post('alamat');
+			$notelp=$this->input->post('notelp');
+			$simpan = $this->m_suplier->simpan_suplier($nama,$alamat,$notelp);
+
+			// audit 
+			$this->m_global->audit_master('Insert', 'tbl_suplier', $simpan);
+			// audit
+
+			redirect('admin/suplier');
+
+		}else{
+
+	        echo "Halaman tidak ditemukan";
+
+	    }
+
 	}
+
 	function edit_suplier(){
-	if($this->session->userdata('akses')=='1'){
-		$kode=$this->input->post('kode');
-		$nama=$this->input->post('nama');
-		$alamat=$this->input->post('alamat');
-		$notelp=$this->input->post('notelp');
-		$this->m_suplier->update_suplier($kode,$nama,$alamat,$notelp);
-		redirect('admin/suplier');
-	}else{
-        echo "Halaman tidak ditemukan";
-    }
+
+		if($this->session->userdata('akses')=='1'){
+
+			$kode=$this->input->post('kode');
+			$nama=$this->input->post('nama');
+			$alamat=$this->input->post('alamat');
+			$notelp=$this->input->post('notelp');
+			$this->m_suplier->update_suplier($kode,$nama,$alamat,$notelp);
+
+			// audit 
+			$this->m_global->audit_master('Update', 'tbl_suplier', $kode);
+			// audit
+
+			redirect('admin/suplier');
+
+		}else{
+
+	        echo "Halaman tidak ditemukan";
+
+	    }
+
 	}
+
 	function hapus_suplier(){
-	if($this->session->userdata('akses')=='1'){
-		$kode=$this->input->post('kode');
-		$this->m_suplier->hapus_suplier($kode);
-		redirect('admin/suplier');
-	}else{
-        echo "Halaman tidak ditemukan";
-    }
+
+		if($this->session->userdata('akses')=='1'){
+
+			$kode=$this->input->post('kode');
+			$this->m_suplier->hapus_suplier($kode);
+
+			// audit 
+			$this->m_global->audit_master('Delete', 'tbl_suplier', $kode);
+			// audit
+
+			redirect('admin/suplier');
+
+		}else{
+
+	        echo "Halaman tidak ditemukan";
+
+	    }
+
 	}
+
 }
