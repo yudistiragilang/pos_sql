@@ -13,6 +13,7 @@ class Suplier extends CI_Controller{
         };
 
 		$this->load->model('m_suplier');
+		$this->load->model('m_global');
 
 	}
 
