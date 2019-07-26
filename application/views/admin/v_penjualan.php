@@ -116,7 +116,7 @@
             <hr/>
         </div>
         <!-- /.row -->
-        <!-- ============ MODAL ADD =============== -->
+        <!-- ============ MODAL TAMPIL BANTUAN =============== -->
         <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -145,7 +145,7 @@
                             $no++;
                             $id=$a['barang_id'];
                             $nm=$a['barang_nama'];
-                            $satuan=$a['barang_satuan'];
+                            $satuan=$a['nama_uom'];
                             $harpok=$a['barang_harpok'];
                             $harjul=$a['barang_harjul'];
                             $harjul_grosir=$a['barang_harjul_grosir'];
