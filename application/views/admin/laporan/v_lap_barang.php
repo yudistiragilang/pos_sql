@@ -62,7 +62,7 @@ $nomor=1;
                 <td style="text-align:center;vertical-align:center;text-align:center;"><?php echo $nomor; ?></td>
                 <td style="vertical-align:center;padding-left:5px;text-align:center;"><?php echo $d['barang_id']; ?></td>
                 <td style="vertical-align:center;padding-left:5px;"><?php echo $d['barang_nama']; ?></td>
-                <td style="vertical-align:center;text-align:center;"><?php echo $d['barang_satuan']; ?></td>
+                <td style="vertical-align:center;text-align:center;"><?php echo $d['nama']; ?></td>
                 <td style="vertical-align:center;padding-right:5px;text-align:right;"><?php echo 'Rp '.number_format($d['barang_harjul']); ?></td>
                 <td style="vertical-align:center;text-align:center;text-align:center;"><?php echo $d['barang_stok']; ?></td>  
         </tr>
