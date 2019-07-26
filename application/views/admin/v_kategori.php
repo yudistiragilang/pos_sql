@@ -35,6 +35,7 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
+                <center><?php echo $this->session->flashdata('msg');?></center>
                 <h1 class="page-header">Kategori
                     <small>Barang</small>
                     <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Kategori</a></div>

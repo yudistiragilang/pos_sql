@@ -13,18 +13,15 @@ class Kategori extends CI_Controller{
 
 	function index(){
 
-		if($this->session->userdata('akses')=='1'){
-			$data['data']=$this->m_kategori->tampil_kategori();
-			$this->load->view('admin/v_kategori',$data);
-		}else{
-	        echo "Halaman tidak ditemukan";
-	    }
+	    $data['data']=$this->m_kategori->tampil_kategori();
+		$this->load->view('admin/v_kategori',$data);
 
 	}
 
 	function tambah_kategori(){
 
 		if($this->session->userdata('akses')=='1'){
+
 			$kat=$this->input->post('kategori');
 			$simpan = $this->m_kategori->simpan_kategori($kat);
 
@@ -33,8 +30,12 @@ class Kategori extends CI_Controller{
 			// audit
 
 			redirect('admin/kategori');
+
 		}else{
-	        echo "Halaman tidak ditemukan";
+
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Tambah Kategori !</label>');
+			redirect('admin/kategori');
+
 	    }
 
 	}
@@ -52,7 +53,8 @@ class Kategori extends CI_Controller{
 
 			redirect('admin/kategori');
 		}else{
-	        echo "Halaman tidak ditemukan";
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Edit Kategori !</label>');
+			redirect('admin/kategori');
 	    }
 
 	}
@@ -69,7 +71,8 @@ class Kategori extends CI_Controller{
 
 			redirect('admin/kategori');
 		}else{
-	        echo "Halaman tidak ditemukan";
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Hapus Kategori !</label>');
+			redirect('admin/kategori');
 	    }
 
 	}
