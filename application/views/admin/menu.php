@@ -45,9 +45,9 @@
                         </ul>
                     </li>
                     <!--ending dropdown-->
-                    <li>
-                        <a href="<?php echo base_url().'admin/retur'?>"><span class="fa fa-refresh"></span> Retur</a>
-                    </li>
+                    <!-- <li>
+                        <a href="<?php //echo base_url().'admin/retur'?>"><span class="fa fa-refresh"></span> Retur</a>
+                    </li> -->
                     <?php }?>
                      <li>
                         <a href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
