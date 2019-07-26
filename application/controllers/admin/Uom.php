@@ -15,12 +15,14 @@ class Uom extends CI_Controller{
 
 	function index(){
 
-		if($this->session->userdata('akses')=='1'){
-			$data['data']=$this->m_uom->tampil_uom();
-			$this->load->view('admin/v_uom',$data);
-		}else{
-	        echo "Halaman tidak ditemukan";
-	    }
+		// if($this->session->userdata('akses')=='1'){
+		// 	$data['data']=$this->m_uom->tampil_uom();
+		// 	$this->load->view('admin/v_uom',$data);
+		// }else{
+	 //        echo "Halaman tidak ditemukan";
+	 //    }
+		$data['data']=$this->m_uom->tampil_uom();
+		$this->load->view('admin/v_uom',$data);
 
 	}
 
@@ -37,7 +39,8 @@ class Uom extends CI_Controller{
 
 			redirect('admin/uom');
 		}else{
-	        echo "Halaman tidak ditemukan";
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Tambah Unit of Measure !</label>');
+			redirect('admin/uom');
 	    }
 
 	}
@@ -56,7 +59,8 @@ class Uom extends CI_Controller{
 
 			redirect('admin/uom');
 		}else{
-	        echo "Halaman tidak ditemukan";
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Ubah Unit of Measure !</label>');
+			redirect('admin/uom');
 	    }
 
 	}
@@ -73,7 +77,8 @@ class Uom extends CI_Controller{
 
 			redirect('admin/uom');
 		}else{
-	        echo "Halaman tidak ditemukan";
+	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Hapus Unit of Measure !</label>');
+			redirect('admin/uom');
 	    }
 
 	}
