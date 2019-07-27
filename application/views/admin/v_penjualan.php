@@ -21,6 +21,7 @@
     <link href="<?php echo base_url().'assets/css/jquery.dataTables.min.css'?>" rel="stylesheet">
     <link href="<?php echo base_url().'assets/dist/css/bootstrap-select.css'?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/bootstrap-datetimepicker.min.css'?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/jquery-ui.css'?>">
 </head>
 
 <body>
@@ -210,6 +211,7 @@
 
     <!-- jQuery -->
     <script src="<?php echo base_url().'assets/js/jquery.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url().'assets/dist/js/bootstrap-select.min.js'?>"></script>
@@ -285,6 +287,25 @@
                     $("#jumlah").focus();
                 }
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('#kode_brg').autocomplete({
+                source: "<?php echo base_url().'admin/penjualan/get_autocomplete';?>",
+     
+                select: function (event, ui) {
+                    $('[name="nabar"]').val(ui.item.nabar); 
+                    $('[name="satuan"]').val(ui.item.satuan);
+                    $('[name="stok"]').val(ui.item.stok);
+                    $('[name="harjul"]').val(ui.item.harjul);
+                    $('[name="diskon"]').val(ui.item.diskon);
+                    $('[name="qty"]').val(ui.item.qty); 
+                    $('[name="qty"]').val(ui.item.qty); 
+                }
+            });
+
         });
     </script>
     

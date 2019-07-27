@@ -47,6 +47,24 @@ class Penjualan extends CI_Controller{
 
 	}
 
+	function get_autocomplete(){
+		if (isset($_GET['term'])) {
+		  	$result = $this->m_penjualan->barang_id($_GET['term']);
+		   	if (count($result) > 0) {
+		    foreach ($result as $row)
+		     	$arr_result[] = array(
+		     		'label'			=> $row->barang_id,
+		     		'nabar'			=> $row->barang_nama,
+		     		'satuan'		=> $row->nama,
+		     		'stok'			=> $row->barang_stok,
+		     		'harjul'		=> $row->barang_harjul,
+		     		'qty'			=> 1,
+				);
+		     	echo json_encode($arr_result);
+		   	}
+		}
+	}
+
 	function add_to_cart(){
 
 		if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
