@@ -15,12 +15,6 @@ class Uom extends CI_Controller{
 
 	function index(){
 
-		// if($this->session->userdata('akses')=='1'){
-		// 	$data['data']=$this->m_uom->tampil_uom();
-		// 	$this->load->view('admin/v_uom',$data);
-		// }else{
-	 //        echo "Halaman tidak ditemukan";
-	 //    }
 		$data['data']=$this->m_uom->tampil_uom();
 		$this->load->view('admin/v_uom',$data);
 
@@ -36,7 +30,7 @@ class Uom extends CI_Controller{
 			// audit 
 			$this->m_global->audit_master('Insert', 'tbl_uom', $simpan);
 			// audit
-
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Unit of Measure '.$uom.' Berhasil Ditambahkan </label>');
 			redirect('admin/uom');
 		}else{
 	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Tambah Unit of Measure !</label>');
@@ -57,6 +51,7 @@ class Uom extends CI_Controller{
 			$this->m_global->audit_master('Update', 'tbl_uom', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-info">Unit of Measure '.$uom.' Berhasil Diubah </label>');
 			redirect('admin/uom');
 		}else{
 	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Ubah Unit of Measure !</label>');
@@ -75,6 +70,7 @@ class Uom extends CI_Controller{
 			$this->m_global->audit_master('Delete', 'tbl_uom', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-warning">Unit of Measure '.$uom.' Berhasil Dihapus </label>');
 			redirect('admin/uom');
 		}else{
 	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Hapus Unit of Measure !</label>');

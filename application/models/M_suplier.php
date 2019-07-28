@@ -17,7 +17,7 @@ class M_suplier extends CI_Model{
 
 	function tampil_suplier(){
 
-		$hsl=$this->db->query("select * from tbl_suplier order by suplier_id desc");
+		$hsl=$this->db->query("SELECT * FROM tbl_suplier ORDER BY suplier_nama ASC");
 		return $hsl;
 
 	}

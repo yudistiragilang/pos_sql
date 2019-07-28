@@ -39,12 +39,13 @@ class Suplier extends CI_Controller{
 			$nama=$this->input->post('nama');
 			$alamat=$this->input->post('alamat');
 			$notelp=$this->input->post('notelp');
-			$simpan = $this->m_suplier->simpan_suplier($nama,$alamat,$notelp);
+			$simpan = $this->m_suplier->simpan_suplier($nama, $alamat, $notelp);
 
 			// audit 
 			$this->m_global->audit_master('Insert', 'tbl_suplier', $simpan);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Suppliers '.$nama.' Berhasil Ditambahkan </label>');
 			redirect('admin/suplier');
 
 		}else{
@@ -69,6 +70,7 @@ class Suplier extends CI_Controller{
 			$this->m_global->audit_master('Update', 'tbl_suplier', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-info">Suppliers '.$nama.' Berhasil Diubah </label>');
 			redirect('admin/suplier');
 
 		}else{
@@ -90,6 +92,7 @@ class Suplier extends CI_Controller{
 			$this->m_global->audit_master('Delete', 'tbl_suplier', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-warning">Suppliers '.$nama.' Berhasil Dihapus </label>');
 			redirect('admin/suplier');
 
 		}else{

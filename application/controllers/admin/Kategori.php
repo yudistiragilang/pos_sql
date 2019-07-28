@@ -29,6 +29,7 @@ class Kategori extends CI_Controller{
 			$this->m_global->audit_master('Insert', 'tbl_kategori', $simpan);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Kategori '.$kat.' Berhasil Ditambahkan </label>');
 			redirect('admin/kategori');
 
 		}else{
@@ -51,10 +52,14 @@ class Kategori extends CI_Controller{
 			$this->m_global->audit_master('Update', 'tbl_kategori', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-info">Kategori '.$kat.' Berhasil Diubah </label>');
 			redirect('admin/kategori');
+
 		}else{
+
 	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Edit Kategori !</label>');
 			redirect('admin/kategori');
+
 	    }
 
 	}
@@ -69,10 +74,14 @@ class Kategori extends CI_Controller{
 			$this->m_global->audit_master('Delete', 'tbl_kategori', $kode);
 			// audit
 
+			echo $this->session->set_flashdata('msg','<label class="label label-warning">Kategori '.$kat.' Berhasil Dihapus </label>');
 			redirect('admin/kategori');
+
 		}else{
+
 	        echo $this->session->set_flashdata('msg','<label class="label label-danger">Tidak Ada Akses Untuk Hapus Kategori !</label>');
 			redirect('admin/kategori');
+
 	    }
 
 	}
