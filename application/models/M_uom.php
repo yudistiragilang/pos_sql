@@ -17,7 +17,7 @@ class M_uom extends CI_Model{
 
 	function tampil_uom(){
 
-		$hsl=$this->db->query("SELECT * FROM tbl_uom ORDER BY id DESC");
+		$hsl=$this->db->query("SELECT * FROM tbl_uom ORDER BY nama ASC");
 		return $hsl;
 
 	}
