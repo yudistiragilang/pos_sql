@@ -60,3 +60,32 @@
         </div>
         <!-- /.container -->
     </nav>
+    <script src="<?php echo base_url().'assets/js/jquery.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/sweetalert2.all.min.js'?>"></script>
+    <script>
+    /*$('.logout').on("click", function (e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        Swal.fire({
+                title: 'Anda yakin?',
+                text: "Anda yakin mau keluar?",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Keluar sekarang!',
+                cancelButtonText: 'Batal',
+            })
+            .then((result) => {
+                if (result.value) {
+                    setTimeout(
+                        function () {
+                            window.location.replace(url);
+                        }, 0);
+
+                } else {
+                    //Swal.fire("Batal Keluar!");
+                }
+            });
+    });*/
+  </script>

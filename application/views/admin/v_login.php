@@ -50,6 +50,22 @@
     <script src="<?php echo base_url().'assets/js/jquery.min.js'?>"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js'?>"></script>
-    
+
+    <!-- Added -->
+    <script src="<?php echo base_url().'assets/js/sweetalert2.all.min.js'?>"></script>
+
+	<?php if ($this->session->flashdata('sukses')): ?>
+	    <script>
+	    Swal.fire({
+	      toast: true,
+	      position: 'top-end',
+	      type: 'success',
+	      title: '<?php echo $this->session->flashdata('sukses'); ?>',
+	      showConfirmButton: false,
+	      timer: 3500
+	    })
+	    </script>
+	<?php endif; ?>
+
   </body>
 </html>
