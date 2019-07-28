@@ -36,9 +36,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <center><?php echo $this->session->flashdata('msg');?></center>
+                <center><?php echo $this->session->flashdata('sukses');?></center>
+                <center><?php echo $this->session->flashdata('gagal');?></center>
                 <h1 class="page-header">Data
                     <small>Barang</small>
-                    <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a></div>
+                    <div class="pull-right">
+                        <a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah Barang</a>
+                        <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#largeModalImport"><span class="fa fa-plus"></span> Import Data</a>
+                    </div>
                 </h1>
             </div>
         </div>
@@ -355,6 +360,40 @@
         }
         ?>
 
+        <!-- ============ MODAL Import =============== -->
+        <div class="modal fade" id="largeModalImport" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title" id="myModalLabel">Import Data Barang</h3>
+            </div>
+
+            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo base_url().'admin/controler_global/import/barang'?>">
+                <div class="modal-body">
+
+                    <div class="col-xs-12 content-center">
+                        Download Template BARANG Disini !
+                        <a href="<?php echo base_url().'assets/template_excel/barang_template.xls'?>" download>Template Excel</a>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Pilih File</label>
+                        <div class="col-xs-9">
+                            <input name="userfile" class="form-control" type="file" style="width:280px;" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                    <button class="btn btn-info">Import</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
         <!--END MODAL-->
 
         <hr>

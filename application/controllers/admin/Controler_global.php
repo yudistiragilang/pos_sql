@@ -66,10 +66,23 @@ class Controler_global extends CI_Controller{
 	    		$methodnya = "simpan_barang";
 	    		$tabelnya = "tbl_barang";
 	    		$redirect_ke = "admin/barang";
+	    		$kobar=$this->m_barang->get_kobar();
 
 	    	}
 
-	    	$simpan = $this->$classnya->$methodnya($Col_2, $Col_3, $Col_4, $Col_5, $Col_6, $Col_7, $Col_8, $Col_9, $Col_10);
+	    	if(!empty($Col_2)){
+
+		    	if($tipe == BARANG){
+
+			    	$simpan = $this->$classnya->$methodnya($kobar, $Col_2, $Col_3, $Col_4, $Col_5, $Col_6, $Col_7, $Col_8, $Col_9, $Col_10);
+
+			    }else{
+
+			    	$simpan = $this->$classnya->$methodnya($Col_2, $Col_3, $Col_4, $Col_5, $Col_6, $Col_7, $Col_8, $Col_9, $Col_10);
+
+			    }
+
+	    	}
 	    	
 	    	// audit 
 			$this->m_global->audit_master('Insert', $tabelnya, $simpan);
