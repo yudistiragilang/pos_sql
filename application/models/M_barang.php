@@ -3,7 +3,7 @@ class M_barang extends CI_Model{
 
 	function hapus_barang($kode){
 
-		$hsl=$this->db->query("DELETE FROM tbl_barang where barang_id='$kode'");
+		$hsl=$this->db->query("DELETE FROM tbl_barang WHERE barang_id='$kode'");
 		return $hsl;
 		
 	}
@@ -33,12 +33,13 @@ class M_barang extends CI_Model{
 							FROM
 								tbl_barang AS barang
 								JOIN tbl_kategori AS kat ON barang.barang_kategori_id = kat.kategori_id
-								JOIN tbl_uom AS uom ON uom.id=barang.barang_uom_id");
+								JOIN tbl_uom AS uom ON uom.id=barang.barang_uom_id
+							ORDER BY barang_nama ASC");
 		return $hsl;
 
 	}
 
-	function simpan_barang($kobar,$nabar,$kat,$satuan,$harpok,$harjul,$harjul_grosir,$stok,$min_stok){
+	function simpan_barang($kobar, $nabar, $kat, $satuan, $harpok, $harjul, $harjul_grosir, $stok, $min_stok){
 
 		$user_id=$this->session->userdata('idadmin');
 		$hsl=$this->db->query("INSERT INTO tbl_barang (barang_id, barang_nama, barang_uom_id, barang_harpok, barang_harjul, barang_harjul_grosir, barang_stok, barang_min_stok, barang_kategori_id, barang_user_id) VALUES ('$kobar','$nabar','$satuan','$harpok','$harjul','$harjul_grosir','$stok','$min_stok','$kat','$user_id')");

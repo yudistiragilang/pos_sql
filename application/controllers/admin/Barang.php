@@ -48,6 +48,7 @@ class Barang extends CI_Controller{
 			$this->m_global->audit_master('Insert', 'tbl_barang', $simpan);
 			// audit 
 
+			echo $this->session->set_flashdata('msg','<label class="label label-success">Barang '.$nabar.' Berhasil Ditambahkan </label>');
 			redirect('admin/barang');
 		}else{
 	        echo "Halaman tidak ditemukan";
@@ -73,6 +74,7 @@ class Barang extends CI_Controller{
 			$this->m_global->audit_master('Update', 'tbl_barang', $kobar);
 			// audit 
 
+			echo $this->session->set_flashdata('msg','<label class="label label-info">Barang '.$nabar.' Berhasil Diubah </label>');
 			redirect('admin/barang');
 		}else{
 	        echo "Halaman tidak ditemukan";
@@ -90,6 +92,7 @@ class Barang extends CI_Controller{
 			$this->m_global->audit_master('Delete', 'tbl_barang', $kode);
 			// audit 
 
+			echo $this->session->set_flashdata('msg','<label class="label label-warning">Barang '.$nabar.' Berhasil Dihapus </label>');
 			redirect('admin/barang');
 		}else{
 	        echo "Halaman tidak ditemukan";
