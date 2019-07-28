@@ -47,7 +47,23 @@ class Penjualan extends CI_Controller{
 
 	}
 
-	function get_autocomplete(){
+	function get_nama_barang(){
+
+		if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+
+			$nabar=$this->input->post('nabar');
+			$x['brg']=$this->m_barang->get_nama_barang($nabar);
+			$this->load->view('admin/v_detail_barang_jual',$x);
+
+		}else{
+
+	        echo "Halaman tidak ditemukan";
+
+	    }
+
+	}
+
+	function get_autocomplete_kobar(){
 		if (isset($_GET['term'])) {
 		  	$result = $this->m_penjualan->barang_id($_GET['term']);
 		   	if (count($result) > 0) {
@@ -55,6 +71,24 @@ class Penjualan extends CI_Controller{
 		     	$arr_result[] = array(
 		     		'label'			=> $row->barang_id,
 		     		'nabar'			=> $row->barang_nama,
+		     		'satuan'		=> $row->nama,
+		     		'stok'			=> $row->barang_stok,
+		     		'harjul'		=> $row->barang_harjul,
+		     		'qty'			=> 1,
+				);
+		     	echo json_encode($arr_result);
+		   	}
+		}
+	}
+
+	function get_autocomplete_nabar(){
+		if (isset($_GET['term'])) {
+		  	$result = $this->m_penjualan->barang_nama($_GET['term']);
+		   	if (count($result) > 0) {
+		    foreach ($result as $row)
+		     	$arr_result[] = array(
+		     		'kobar'			=> $row->barang_id,
+		     		'label'			=> $row->barang_nama,
 		     		'satuan'		=> $row->nama,
 		     		'stok'			=> $row->barang_stok,
 		     		'harjul'		=> $row->barang_harjul,
@@ -77,7 +111,7 @@ class Penjualan extends CI_Controller{
 		              'name'     => $i['barang_nama'],
 		              'satuan'   => $i['nama_uom'],
 		              'harpok'   => $i['barang_harpok'],
-		              'price'    => str_replace(",", "", $this->input->post('harjul'))-$this->input->post('diskon'),
+		              'price'    => ($this->input->post('diskon')/100)*str_replace(",", "", $this->input->post('harjul')),
 		              'disc'     => $this->input->post('diskon'),
 		              'qty'      => $this->input->post('qty'),
 		              'amount'	  => str_replace(",", "", $this->input->post('harjul'))

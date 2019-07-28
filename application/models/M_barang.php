@@ -72,6 +72,31 @@ class M_barang extends CI_Model{
 
 	}
 
+	function get_nama_barang($nabar){
+
+		$hsl=$this->db->query("SELECT
+								barang_id,
+								barang_nama,
+								barang_harpok,
+								barang_harjul,
+								barang_harjul_grosir,
+								barang_stok,
+								barang_min_stok,
+								barang_kategori_id,
+								barang_uom_id,
+								kat.kategori_nama,
+								uom.nama AS nama_uom
+							FROM
+								tbl_barang AS barang
+								JOIN tbl_kategori AS kat ON barang.barang_kategori_id = kat.kategori_id
+								JOIN tbl_uom AS uom ON uom.id=barang.barang_uom_id 
+							WHERE barang.barang_id ='$nabar'");
+
+		// $hsl=$this->db->query("SELECT * FROM tbl_barang where barang_id='BR000001'");
+		return $hsl;
+
+	}
+
 	function get_kobar(){
 
 		$q = $this->db->query("SELECT MAX(RIGHT(barang_id,6)) AS kd_max FROM tbl_barang");

@@ -49,17 +49,28 @@
         <div class="row">
             <div class="col-lg-12">
             <form action="<?php echo base_url().'admin/penjualan/add_to_cart'?>" method="post">
+            <div class="col-lg-6 row">
                 <table>
                     <tr>
                         <th>Kode Barang</th>
+                        <th></th>
+                        <th>Nama Barang</th>
                     </tr>
                     <tr>
-                        <th><input type="text" name="kode_brg" id="kode_brg" class="form-control input-sm"></th>                     
+                        <td><input type="text" name="kode_brg" id="kode_brg" class="form-control input-sm" placeholder="BR..."></td>
+                        <td style="width:10px;"> </td>
+                        <td style="width:380px;"><input type="text" name="nabar" id="nabar" class="form-control input-sm" placeholder="Nama Barang"></td>
                     </tr>
-                        <div id="detail_barang" style="position:absolute;">
-                        </div>
                 </table>
+            </div>
+            <div class="col-lg-6 row">
+                <div id="detail_barang" style="position:absolute;"></div>
+            </div>
             </form>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-12">
             <table class="table table-bordered table-condensed" style="font-size:11px;margin-top:10px;">
                 <thead>
                     <tr>
@@ -282,6 +293,18 @@
             });
             }); 
 
+            $("#nabar").on("input",function(){
+                var nabar = {nabar:$(this).val()};
+                   $.ajax({
+               type: "POST",
+               url : "<?php echo base_url().'admin/penjualan/get_barang';?>",
+               data: nabar,
+               success: function(msg){
+               $('#detail_barang').html(msg);
+               }
+            });
+            }); 
+
             $("#kode_brg").keypress(function(e){
                 if(e.which==13){
                     $("#jumlah").focus();
@@ -293,10 +316,22 @@
         $(document).ready(function(){
 
             $('#kode_brg').autocomplete({
-                source: "<?php echo base_url().'admin/penjualan/get_autocomplete';?>",
-     
+                source: "<?php echo base_url().'admin/penjualan/get_autocomplete_kobar';?>",
                 select: function (event, ui) {
                     $('[name="nabar"]').val(ui.item.nabar); 
+                    $('[name="satuan"]').val(ui.item.satuan);
+                    $('[name="stok"]').val(ui.item.stok);
+                    $('[name="harjul"]').val(ui.item.harjul);
+                    $('[name="diskon"]').val(ui.item.diskon);
+                    $('[name="qty"]').val(ui.item.qty); 
+                    $('[name="qty"]').val(ui.item.qty); 
+                }
+            });
+
+            $('#nabar').autocomplete({
+                source: "<?php echo base_url().'admin/penjualan/get_autocomplete_nabar';?>",
+                select: function (event, ui) {
+                    $('[name="kode_brg"]').val(ui.item.kobar); 
                     $('[name="satuan"]').val(ui.item.satuan);
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);

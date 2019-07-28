@@ -23,6 +23,14 @@ class M_penjualan extends CI_Model{
 		return $this->db->get('tbl_barang')->result();
 	}
 
+	function barang_nama($id){
+		$this->db->like('barang_nama', $id , 'both');
+		$this->db->order_by('barang_nama', 'ASC');
+		$this->db->limit(10);
+		$this->db->join('tbl_uom', 'id = barang_uom_id');
+		return $this->db->get('tbl_barang')->result();
+	}
+
 	function simpan_retur($kobar, $nabar, $satuan, $harjul, $qty, $keterangan){
 
 		$subtotal = $harjul*$qty;
