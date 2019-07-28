@@ -32,6 +32,7 @@
 </head>
 
 <body>
+
 <img src="<?php echo base_url().'assets/img/bg2.jpg'?>" alt="gambar" class="bg" />
     <!-- Navigation -->
    <?php 
@@ -180,6 +181,22 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url().'assets/js/bootstrap.min.js'?>"></script>
+    
+    <!-- Added -->
+    <script src="<?php echo base_url().'assets/js/sweetalert2.all.min.js'?>"></script>
+
+<?php if ($this->session->flashdata('sukses')): ?>
+    <script>
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      type: 'success',
+      title: '<?php echo $this->session->flashdata('sukses'); ?>',
+      showConfirmButton: false,
+      timer: 3500
+    })
+    </script>
+<?php endif; ?>    
 
 </body>
 

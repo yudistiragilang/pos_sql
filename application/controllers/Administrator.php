@@ -43,6 +43,7 @@ class Administrator extends CI_Controller{
         }
     }
         function berhasillogin(){
+            $this->session->set_flashdata('sukses', $this->session->userdata('nama').'! Kamu Berhasil Login');
             redirect('welcome');
         }
         function gagallogin(){
@@ -52,7 +53,12 @@ class Administrator extends CI_Controller{
         }
         function logout(){
             $this->session->sess_destroy();
-            $url=base_url('administrator');
+            $url=base_url('administrator/logout_flashdata');
             redirect($url);
+        }
+
+        function logout_flashdata() {
+            $this->session->set_flashdata('sukses', $this->session->userdata('nama').'Kamu Berhasil Logout');
+            redirect('administrator');
         }
 }
