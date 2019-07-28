@@ -19,6 +19,18 @@
  *
  */
 	define('ENVIRONMENT', 'development');
+
+	// DEFINISI APLIKASI
+	define('UOM', 'uom');
+	define('KATEGORI', 'kategori');
+	define('BARANG', 'barang');
+	define('SUPPLIER', 'supplier');
+	define('PENJUALAN_ECERAN', 'eceran');
+	define('PENJUALAN_GROSIR', 'grosir');
+	define('PEMBELIAN', 'pembelian');
+	define('RETUR', 'retur');
+	define('PENGGUNA', 'pengguna');
+	// DEFINISI APLIKASI
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

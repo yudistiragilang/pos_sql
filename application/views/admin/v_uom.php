@@ -42,7 +42,7 @@
                     <small>Barang</small>
                     <div class="pull-right">
                         <a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#largeModal"><span class="fa fa-plus"></span> Tambah UOM</a>
-                        <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#largeModalImport"><span class="fa fa-plus"></span> Import UOM</a>
+                        <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#largeModalImport"><span class="fa fa-plus"></span> Import Data</a>
                     </div>
                 </h1>
             </div>
@@ -202,7 +202,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h3 class="modal-title" id="myModalLabel">Import Data UOM</h3>
             </div>
-            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo base_url().'admin/uom/import_uom'?>">
+
+            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo base_url().'admin/controler_global/import/uom'?>">
                 <div class="modal-body">
 
                     <div class="col-xs-12 content-center">
@@ -210,7 +211,6 @@
                         <a href="<?php echo base_url().'assets/template_excel/unit_of_measure_template.xls'?>" download>Template Excel</a>
                     </div>
                     
-
                     <div class="form-group">
                         <label class="control-label col-xs-3" >Pilih File</label>
                         <div class="col-xs-9">

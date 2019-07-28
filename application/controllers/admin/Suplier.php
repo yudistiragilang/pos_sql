@@ -39,7 +39,7 @@ class Suplier extends CI_Controller{
 			$nama=$this->input->post('nama');
 			$alamat=$this->input->post('alamat');
 			$notelp=$this->input->post('notelp');
-			$simpan = $this->m_suplier->simpan_suplier($nama,$alamat,$notelp);
+			$simpan = $this->m_suplier->simpan_suplier($nama, $alamat, $notelp);
 
 			// audit 
 			$this->m_global->audit_master('Insert', 'tbl_suplier', $simpan);
