@@ -17,7 +17,7 @@ class M_kategori extends CI_Model{
 
 	function tampil_kategori(){
 
-		$hsl=$this->db->query("SELECT * FROM tbl_kategori ORDER BY kategori_id DESC");
+		$hsl=$this->db->query("SELECT * FROM tbl_kategori ORDER BY kategori_nama ASC");
 		return $hsl;
 
 	}
