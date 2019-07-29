@@ -50,7 +50,7 @@
                     </li> -->
                     <?php }?>
                      <li>
-                        <a href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
+                        <a class="alert-logout" href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
                     </li>
                 </ul>
 
@@ -63,12 +63,12 @@
     <script src="<?php echo base_url().'assets/js/jquery.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/sweetalert2.all.min.js'?>"></script>
     <script>
-    /*$('.logout').on("click", function (e) {
+    $('.alert-logout').on("click", function (e) {
         e.preventDefault();
         var url = $(this).attr('href');
         Swal.fire({
-                title: 'Anda yakin?',
-                text: "Anda yakin mau keluar?",
+                title: 'Keluar ?',
+                text: "Yakin mau keluar?",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -87,5 +87,5 @@
                     //Swal.fire("Batal Keluar!");
                 }
             });
-    });*/
+    });
   </script>
