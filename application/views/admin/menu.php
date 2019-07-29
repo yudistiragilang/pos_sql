@@ -50,7 +50,7 @@
                     </li> -->
                     <?php }?>
                      <li>
-                        <a class="logout" href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
+                        <a href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
                     </li>
                 </ul>
 
@@ -63,7 +63,7 @@
     <script src="<?php echo base_url().'assets/js/jquery.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/sweetalert2.all.min.js'?>"></script>
     <script>
-    $('.logout').on("click", function (e) {
+    /*$('.logout').on("click", function (e) {
         e.preventDefault();
         var url = $(this).attr('href');
         Swal.fire({
@@ -87,5 +87,5 @@
                     //Swal.fire("Batal Keluar!");
                 }
             });
-    });
+    });*/
   </script>
