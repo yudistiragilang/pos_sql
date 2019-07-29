@@ -1,0 +1,522 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"h",
+				"html\thtml"
+			],
+			[
+				"backgroun",
+				"background-color\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/controllers/Welcome.php",
+			"settings":
+			{
+				"buffer_size": 275,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/admin/v_index.php",
+			"settings":
+			{
+				"buffer_size": 8055,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/admin/v_login.php",
+			"settings":
+			{
+				"buffer_size": 2502,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/admin/menu.php",
+			"settings":
+			{
+				"buffer_size": 4894,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/Administrator.php",
+			"settings":
+			{
+				"buffer_size": 2365,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pretify",
+				"HTMLPrettify: Set Prettify Preferences"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/xampp/htdocs/project/pos_sql",
+		"/F/xampp/htdocs/project/pos_sql/application",
+		"/F/xampp/htdocs/project/pos_sql/application/controllers",
+		"/F/xampp/htdocs/project/pos_sql/application/controllers/admin",
+		"/F/xampp/htdocs/project/pos_sql/application/views",
+		"/F/xampp/htdocs/project/pos_sql/application/views/admin"
+	],
+	"file_history":
+	[
+		"/F/xampp/htdocs/project/pos_sql/application/config/config.php",
+		"/F/xampp/htdocs/project/pos_sql/application/controllers/Administrator.php",
+		"/F/xampp/htdocs/ARiset/autocomplete-codeigniter/application/views/blog_view.php",
+		"/F/xampp/htdocs/ARiset/autocomplete-codeigniter/application/models/Blog_model.php",
+		"/F/xampp/htdocs/ARiset/autocomplete-codeigniter/application/controllers/Blog.php",
+		"/F/xampp/htdocs/project/pos_sql/application/views/admin/v_penjualan.php",
+		"/F/xampp/htdocs/project/pos_sql/application/models/M_barang.php",
+		"/F/xampp/htdocs/project/pos_sql/application/views/admin/v_detail_barang_jual.php",
+		"/F/xampp/htdocs/project/pos_sql/application/controllers/admin/Penjualan.php",
+		"/F/xampp/htdocs/project/pos_sql/application/models/M_penjualan.php",
+		"/F/xampp/htdocs/ARiset/autocomplete-codeigniter/application/views/search_view.php",
+		"/C/Users/dien_/Downloads/Video/Umar Ibn al-Khattab - TV Series 2012 (A)/Umar Series 720p Episode 12.ass",
+		"/C/Users/dien_/Downloads/Video/Umar Ibn al-Khattab - TV Series 2012 (A)/UmarSeries720pEpisode13.ass",
+		"/C/Users/dien_/Downloads/Video/Umar Ibn al-Khattab - TV Series 2012 (A)/UmarSeries720pEpisode14.ass",
+		"/C/Users/dien_/Downloads/Video/Umar Ibn al-Khattab - TV Series 2012 (A)/UmarSeries720pEpisode15.ass",
+		"/C/Users/dien_/Downloads/Video/Umar Ibn al-Khattab - TV Series 2012 (A)/UmarSeries720pEpisode11.ass",
+		"/C/Users/dien_/Documents/supercell/routes/web.php",
+		"/C/Users/dien_/Documents/supercell/resources/views/biodata.blade.php",
+		"/C/Users/dien_/Documents/supercell/app/Http/Controllers/COCController.php",
+		"/C/Users/dien_/Documents/supercell/resources/views/coc_clans.blade.php",
+		"/C/Users/dien_/Documents/supercell/resources/views/coc_home.blade.php",
+		"/C/Users/dien_/Documents/supercell/app/Http/Controllers/DosenController.php",
+		"/C/Users/dien_/Documents/supercell/app/Http/Controllers/PegawaiController.php",
+		"/C/Users/dien_/Documents/supercell/resources/views/welcome.blade.php",
+		"/C/Users/dien_/Documents/supercell/resources/views/blog.blade.php",
+		"/F/xampp/htdocs/ARiset/Supercell/clans.php",
+		"/F/xampp/htdocs/ARiset/Supercell/token.php",
+		"/F/xampp/htdocs/ARiset/Supercell/players.php",
+		"/F/path/composer/composer.phar",
+		"/F/path/composer/composer",
+		"/F/xampp/htdocs/ARiset/ci/Restfull/ci-restserver/application/controllers/Kontak.php",
+		"/F/xampp/htdocs/ARiset/Supercell/clash/src/config.php",
+		"/F/xampp/htdocs/ARiset/ci/pagination_ci/application/controllers/Siswa.php",
+		"/F/xampp/htdocs/ARiset/ci/pagination_ci/application/models/SiswaModel.php",
+		"/F/xampp/htdocs/ARiset/Supercell/.htaccess",
+		"/F/xampp/htdocs/ARiset/ci/pagination_ci/application/views/view.php",
+		"/F/xampp/htdocs/ARiset/Supercell/clash/api/updateCountriesToDB.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/models/MPengguna.php",
+		"/F/xampp/htdocs/ARiset/ci/pagination_ci/application/config/database.php",
+		"/F/xampp/htdocs/ARiset/ci/pagination_ci/application/config/config.php",
+		"/C/Users/dien_/Downloads/Video/Omar ibn Khattab/Umar Series 720p Episode 3.ass",
+		"/F/xampp/htdocs/konekthink/klinik/application/views/admin/setting/user/pengguna_edit.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/controllers/admin/Pengguna.php",
+		"/F/xampp/htdocs/ARiset/ci/cipagi/application/config/database.php",
+		"/C/Users/dien_/Downloads/Video/Omar ibn Khattab/UmarSeries720pEpisode1.ass",
+		"/C/Users/dien_/Downloads/Video/Omar ibn Khattab/UmarSeries720pEpisode2.ass",
+		"/F/xampp/htdocs/ARiset/ci/cipagi/application/config/config.php",
+		"/F/xampp/htdocs/ARiset/Supercell/display.php",
+		"/F/xampp/htdocs/ARiset/ci/Restfull/ci-restserver/application/config/database.php",
+		"/F/xampp/htdocs/konekthink/muslimpocked/application/views/Tanyakyai/vKyai.php",
+		"/F/xampp/htdocs/konekthink/muslimpocked/application/controllers/Kyai.php",
+		"/F/xampp/htdocs/ARiset/ci/ci_serverside/application/models/User_model.php",
+		"/F/xampp/htdocs/ARiset/ci/ci_serverside/application/controllers/User.php",
+		"/F/xampp/htdocs/ARiset/ci/ci_serverside/application/views/user_view.php",
+		"/F/xampp/htdocs/ARiset/ci/ci_serverside/application/config/config.php",
+		"/F/xampp/htdocs/ARiset/ci/ci_serverside/application/config/database.php",
+		"/F/xampp/htdocs/ARiset/ci/codeigniter/application/controllers/Testapi.php",
+		"/F/xampp/htdocs/ARiset/javascript/resize-image/index.php",
+		"/F/xampp/htdocs/ARiset/ci/Restfull/ci-restserver/application/controllers/Rest_server.php",
+		"/F/xampp/htdocs/ARiset/ci/Restfull/ci-restserver/application/views/rest_server.php",
+		"/F/xampp/htdocs/ARiset/ci/restapi/include/Config.php",
+		"/F/xampp/htdocs/ARiset/ci/restapi/index.php",
+		"/F/xampp/htdocs/ARiset/ci/restapi/include/DB_Functions.php",
+		"/F/xampp/htdocs/ARiset/ci/restapi/include/DB_Connect.php",
+		"/F/xampp/htdocs/ARiset/ci/restapi/login.php",
+		"/F/xampp/htdocs/konekthink/muslimpocked/application/controllers/Masjid.php",
+		"/F/xampp/htdocs/ARiset/javascript/resize-image/resample.js",
+		"/C/xampp/htdocs/konekthing/assets/compress/base64.js",
+		"/F/xampp/htdocs/ARiset/javascript/resize-image/size.php",
+		"/C/Users/dien_/AppData/Local/Temp/Rar$DRa18604.18658/resize-image/size.php",
+		"/C/Users/dien_/AppData/Local/Temp/Rar$DRa7320.27417/resize-image/index.php",
+		"/C/xampp/htdocs/konekthing/assets/compress/custom.js",
+		"/C/xampp/htdocs/konekthing/uploads/images/masjid/image.png",
+		"/C/xampp/htdocs/konekthing/application/controllers/Masjid.php",
+		"/F/xampp/htdocs/ARiset/ci/codeigniter/application/controllers/sample/Modif.php",
+		"/F/xampp/htdocs/ARiset/javascript/J-I-C/example/upload.php",
+		"/C/xampp/htdocs/konekthing/assets/compress/upload.php",
+		"/C/xampp/htdocs/konekthing/assets/compress/JIC.min.js",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC/index.php",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC/assets/custom.js",
+		"/F/xampp/htdocs/ARiset/javascript/J-I-C/example/js/demo.js",
+		"/F/xampp/htdocs/ARiset/javascript/compressorjs/package.json",
+		"/F/xampp/htdocs/ARiset/compress-image/1.php",
+		"/F/xampp/htdocs/konekthink/muslimpocked/application/views/masjid/masjid.php",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC-master/custom.js",
+		"/C/xampp/htdocs/konekthing/assets/compress/angular.min.js",
+		"/C/xampp/htdocs/konekthing/assets/compress/jquery-3.4.1.min.js",
+		"/C/xampp/htdocs/konekthing/assets/compress/angular.min.js.map",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC/JIC.js",
+		"/F/xampp/htdocs/konekthink/payment/Midtrans-Codeigniter/application/controllers/beranda.php",
+		"/F/xampp/htdocs/konekthink/payment/Midtrans-Codeigniter/application/views/v_beranda.php",
+		"/F/xampp/htdocs/konekthink/payment/Midtrans-Codeigniter/application/views/checkout_snap.php",
+		"/F/xampp/htdocs/konekthink/payment/Midtrans-Codeigniter/application/controllers/snap.php",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC/custom.js",
+		"/F/xampp/htdocs/ARiset/javascript/J-I-C/example/index.html",
+		"/F/xampp/htdocs/ARiset/javascript/compress.html",
+		"/F/xampp/htdocs/ARiset/javascript/H5CompressUpload/demo.html",
+		"/F/xampp/htdocs/ARiset/javascript/J-I-C/example/js/JIC.min.js",
+		"/F/xampp/htdocs/ARiset/ci/codeigniter/application/config/config.php",
+		"/F/xampp/htdocs/ARiset/ci/codeigniter/application/controllers/sample/Test.php",
+		"/F/xampp/htdocs/ARiset/javascript/demo-JIC-master/index.php",
+		"/F/xampp/htdocs/nusko/nusko_nmark/application/views/admin/v_letter.php",
+		"/C/Users/dien_/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/dien_/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/F/xampp/htdocs/konekthink/klinik/application/views/admin/setting/cabang/cabang_list.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/views/admin/v_menu_utama.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/views/admin/v_menu.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/models/M_menu.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/controllers/admin/Menu.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/models/MCabang.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/controllers/admin/Cabang.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/views/admin/bayar/bayar_edit.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/controllers/admin/Bayar.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/models/M_menut.php",
+		"/F/xampp/htdocs/ARiset/ci/compressimage/sample/Test.php",
+		"/F/xampp/htdocs/ARiset/ci/compressimage/Compress.php",
+		"/C/xampp/htdocs/konekthing/application/models/Masjid_m.php",
+		"/C/xampp/htdocs/konekthing/application/models/Masjid_model.php",
+		"/C/xampp/htdocs/konekthing/application/views/masjid/masjid.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/views/admin/v_tautan.php",
+		"/F/xampp/htdocs/konekthink/klinik/application/views/admin/setting/user/pengguna_add.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/views/admin/v_galeri.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/models/M_galeri.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/controllers/admin/Galeri.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/models/M_tautan.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/controllers/admin/Tautan.php",
+		"/F/xampp/htdocs/nusko/nusko.co.id2/application/views/admin/v_tautan_eksternal.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"foot",
+			"'price'    => str_replace(\",\", \"\", $this->input->post('harjul'))-$this->input->post('diskon'),",
+			"function barang_nama",
+			"detail_barang",
+			"hidde",
+			" \n",
+			">\n",
+			"kode_brg",
+			"$('[name=\"satuan\"]').val(ui.item.description);",
+			"sele",
+			"select",
+			"id_user",
+			"button-collapse",
+			"butto"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/controllers/Welcome.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/admin/v_index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7729,
+								7729
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/views/admin/v_login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2297,
+								2297
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 996.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/views/admin/menu.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3698,
+								3698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1067.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/controllers/Administrator.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2291,
+								2291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 667.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 54.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project_pos.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
