@@ -114,8 +114,8 @@ class Penjualan extends CI_Controller{
 		              'name'     => $i['barang_nama'],
 		              'satuan'   => $i['nama_uom'],
 		              'harpok'   => $i['barang_harpok'],
-		              // 'price'    => ($this->input->post('diskon')/100)*str_replace(",", "", $this->input->post('harjul')),
-		              'price'    => $harga_pokok-$diskon, // diskon dengan nominal
+		              'price'    => $harga_pokok-(($this->input->post('diskon')/100)*str_replace(",", "", $this->input->post('harjul'))),
+		              // 'price'    => $harga_pokok-$diskon, // diskon dengan nominal
 		              'disc'     => $this->input->post('diskon'),
 		              'qty'      => $this->input->post('qty'),
 		              'amount'	  => str_replace(",", "", $this->input->post('harjul'))
