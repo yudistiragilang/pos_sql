@@ -105,6 +105,8 @@ class Penjualan extends CI_Controller{
 
 			$kobar=$this->input->post('kode_brg');
 			$produk=$this->m_barang->get_barang($kobar);
+			$harga_pokok = str_replace(",", "", $this->input->post('harjul'));
+			$diskon = str_replace(",", "", $this->input->post('diskon'));
 			$i=$produk->row_array();
 			if (!empty($this->input->post('diskon'))) {
 				$data = array(
@@ -112,7 +114,8 @@ class Penjualan extends CI_Controller{
 		              'name'     => $i['barang_nama'],
 		              'satuan'   => $i['nama_uom'],
 		              'harpok'   => $i['barang_harpok'],
-		              'price'    => ($this->input->post('diskon')/100)*str_replace(",", "", $this->input->post('harjul')),
+		              // 'price'    => ($this->input->post('diskon')/100)*str_replace(",", "", $this->input->post('harjul')),
+		              'price'    => $harga_pokok-$diskon, // diskon dengan nominal
 		              'disc'     => $this->input->post('diskon'),
 		              'qty'      => $this->input->post('qty'),
 		              'amount'	  => str_replace(",", "", $this->input->post('harjul'))
