@@ -106,7 +106,8 @@ class Penjualan extends CI_Controller{
 			$kobar=$this->input->post('kode_brg');
 			$produk=$this->m_barang->get_barang($kobar);
 			$i=$produk->row_array();
-			$data = array(
+			if (!empty($this->input->post('diskon'))) {
+				$data = array(
 		              'id'       => $i['barang_id'],
 		              'name'     => $i['barang_nama'],
 		              'satuan'   => $i['nama_uom'],
@@ -116,6 +117,19 @@ class Penjualan extends CI_Controller{
 		              'qty'      => $this->input->post('qty'),
 		              'amount'	  => str_replace(",", "", $this->input->post('harjul'))
 		            );
+			} else {
+				$data = array(
+		              'id'       => $i['barang_id'],
+		              'name'     => $i['barang_nama'],
+		              'satuan'   => $i['nama_uom'],
+		              'harpok'   => $i['barang_harpok'],
+		              'price'    => str_replace(",", "", $this->input->post('harjul')),
+		              'disc'     => $this->input->post('diskon'),
+		              'qty'      => $this->input->post('qty'),
+		              'amount'	  => str_replace(",", "", $this->input->post('harjul'))
+		            );
+			}
+			
 			if(!empty($this->cart->total_items())){
 
 				foreach ($this->cart->contents() as $items){
