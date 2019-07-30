@@ -78,7 +78,7 @@
                         <th>Nama Barang</th>
                         <th style="text-align:center;">Satuan</th>
                         <th style="text-align:center;">Harga(Rp)</th>
-                        <th style="text-align:center;">Diskon(Rp)</th>
+                        <th style="text-align:center;">Diskon(%)</th>
                         <th style="text-align:center;">Qty</th>
                         <th style="text-align:center;">Sub Total</th>
                         <th style="width:100px;text-align:center;">Aksi</th>
