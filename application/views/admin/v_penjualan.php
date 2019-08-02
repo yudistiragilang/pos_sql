@@ -322,9 +322,7 @@
                     $('[name="satuan"]').val(ui.item.satuan);
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);
-                    $('[name="diskon"]').val(ui.item.diskon);
-                    $('[name="qty"]').val(ui.item.qty); 
-                    $('[name="qty"]').val(ui.item.qty); 
+                    $('[name="qty"]').val(ui.item.qty);
                 }
             });
 
@@ -335,10 +333,7 @@
                     $('[name="satuan"]').val(ui.item.satuan);
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);
-                    $('[name="diskon"]').val(ui.item.diskon);
-                    $('[name="qty"]').val(ui.item.qty); 
-                    $('[name="qty"]').val(ui.item.qty); 
-                }
+                    $('[name="qty"]').val(ui.item.qty);
             });
 
         });
