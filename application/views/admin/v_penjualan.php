@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Produk By Squad Qurang Liburan">
     <meta name="author" content="POS SQL">
-    
+
     <title>Transaksi Penjualan</title>
 
     <!-- Bootstrap Core CSS -->
@@ -27,7 +27,7 @@
 <body>
 
     <!-- Navigation -->
-   <?php 
+   <?php
         $this->load->view('admin/menu');
    ?>
 
@@ -41,7 +41,7 @@
                 <h1 class="page-header">Transaksi
                     <small>Penjualan (Eceran)</small>
                     <a href="#" data-toggle="modal" data-target="#largeModal" class="pull-right"><small>Cari Produk!</small></a>
-                </h1> 
+                </h1>
             </div>
         </div>
         <!-- /.row -->
@@ -96,10 +96,10 @@
                          <td style="text-align:right;"><?php echo number_format($items['disc']);?></td>
                          <td style="text-align:center;"><?php echo number_format($items['qty']);?></td>
                          <td style="text-align:right;"><?php echo number_format($items['subtotal']);?></td>
-                        
+
                          <td style="text-align:center;"><a href="<?php echo base_url().'admin/penjualan/remove/'.$items['rowid'];?>" class="btn btn-warning btn-xs"><span class="fa fa-close"></span> Batal</a></td>
                     </tr>
-                    
+
                     <?php $i++; ?>
                     <?php endforeach; ?>
                 </tbody>
@@ -151,7 +151,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php 
+                    <?php
                         $no=0;
                         foreach ($data->result_array() as $a):
                             $no++;
@@ -188,22 +188,22 @@
                         </tr>
                     <?php endforeach;?>
                     </tbody>
-                </table>          
+                </table>
 
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                    
+
                 </div>
             </div>
             </div>
         </div>
 
-        
+
 
         <!-- ============ MODAL HAPUS =============== -->
-        
+
 
         <!--END MODAL-->
 
@@ -216,7 +216,7 @@
         ?>
 
         <!-- Footer -->
-        
+
     </div>
     <!-- /.container -->
 
@@ -242,7 +242,7 @@
                 $('#jml_uang2').val(hsl);
                 $('#kembalian').val(hsl-total);
             })
-            
+
         });
     </script>
     <script type="text/javascript">
@@ -296,7 +296,7 @@
                    console.log(document.getElementById("#nabarr"));
                    }
                 });
-            }); 
+            });
 
             $("#nabar").on("input",function(){
                 var nabar = {nabar:$(this).val()};
@@ -308,7 +308,7 @@
                    $('#detail_barang').html(msg);
                    }
                 });
-            }); 
+            });
 
             $("#kode_brg").keypress(function(e){
                 if(e.which==13){
@@ -323,33 +323,33 @@
             $('#kode_brg').autocomplete({
                 source: "<?php echo base_url().'admin/penjualan/get_autocomplete_kobar';?>",
                 select: function (event, ui) {
-                    $('[name="nabar"]').val(ui.item.nabar); 
+                    $('[name="nabar"]').val(ui.item.nabar);
                     $('[name="satuan"]').val(ui.item.satuan);
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);
                     $('[name="diskon"]').val(ui.item.diskon);
-                    $('[name="qty"]').val(ui.item.qty); 
-                    $('[name="qty"]').val(ui.item.qty); 
+                    $('[name="qty"]').val(ui.item.qty);
+                    $('[name="qty"]').val(ui.item.qty);
                 }
             });
 
             $('#nabar').autocomplete({
                 source: "<?php echo base_url().'admin/penjualan/get_autocomplete_nabar';?>",
                 select: function (event, ui) {
-                    $('[name="kode_brg"]').val(ui.item.kobar); 
+                    $('[name="kode_brg"]').val(ui.item.kobar);
                     $('[name="satuan"]').val(ui.item.satuan);
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);
                     $('[name="diskon"]').val(ui.item.diskon);
-                    $('[name="qty"]').val(ui.item.qty); 
-                    $('[name="qty"]').val(ui.item.qty); 
+                    $('[name="qty"]').val(ui.item.qty);
+                    $('[name="qty"]').val(ui.item.qty);
                 }
             });
 
         });
     </script>
-    
-    
+
+
 </body>
 
 </html>

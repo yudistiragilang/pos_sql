@@ -33,7 +33,7 @@
 
 <body>
 
-<img src="<?php echo base_url().'assets/img/bg2.jpg'?>" alt="gambar" class="bg" />
+<img src="<?php echo base_url().'assets/img/bg3.jpg'?>" alt="gambar" class="bg" />
     <!-- Navigation -->
    <?php 
         $this->load->view('admin/menu');
@@ -45,7 +45,7 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header" style="color:#fcc;">Welcome to
+                <h1 class="page-header">Welcome to
                     <small>Point of Sale Apps</small>
                 </h1>
             </div>
@@ -58,7 +58,7 @@
         <!-- Projects Row -->
         <div class="row">
          <?php if($h=='1'){ ?> 
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item blue" style="height:150px;">
                      <a href="<?php echo base_url().'admin/penjualan'?>" data-toggle="modal">
                            <i class="fa fa-shopping-bag"></i>
@@ -74,7 +74,7 @@
                       </a>
                 </div> 
             </div> -->
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item light-orange" style="height:150px;">
                      <a href="<?php echo base_url().'admin/suplier'?>" data-toggle="modal">
                            <i class="fa fa-truck"></i>
@@ -82,7 +82,7 @@
                       </a>
                 </div> 
             </div>
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item color" style="height:150px;">
                      <a href="<?php echo base_url().'admin/kategori'?>" data-toggle="modal">
                            <i class="fa fa-sitemap"></i>
@@ -91,7 +91,7 @@
                 </div> 
             </div>
 
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item uom" style="height:150px;">
                      <a href="<?php echo base_url().'admin/uom'?>" data-toggle="modal">
                            <i class="fa fa-cube"></i>
@@ -136,7 +136,7 @@
         <!-- Projects Row -->
         <div class="row">
         <?php if($h=='1'){ ?> 
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item purple" style="height:150px;">
                      <a href="<?php echo base_url().'admin/barang'?>" data-toggle="modal">
                            <i class="fa fa-shopping-cart"></i>
@@ -144,7 +144,7 @@
                       </a>
                 </div> 
             </div>
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item red" style="height:150px;">
                      <a href="<?php echo base_url().'admin/pengguna'?>" data-toggle="modal">
                            <i class="fa fa-users"></i>
@@ -152,7 +152,7 @@
                       </a>
                 </div> 
             </div>
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item light-red" style="height:150px;">
                      <a href="<?php echo base_url().'admin/pembelian'?>" data-toggle="modal">
                            <i class="fa fa-cubes"></i>
@@ -160,7 +160,7 @@
                       </a>
                 </div> 
             </div>
-            <div class="col-md-2 portfolio-item">
+            <div class="col-md-3 portfolio-item">
                 <div class="menu-item blue" style="height:150px;">
                      <a href="<?php echo base_url().'admin/laporan'?>" data-toggle="modal">
                            <i class="fa fa-bar-chart"></i>
@@ -196,7 +196,19 @@
       timer: 3500
     })
     </script>
-<?php endif; ?>    
+<?php endif; ?>
+
+    <script>
+      window.setTimeout("waktu()", 1000);
+
+      function waktu() {
+        var waktu = new Date();
+        setTimeout("waktu()", 1000);
+        document.getElementById("jam").innerHTML = waktu.getHours();
+        document.getElementById("menit").innerHTML = waktu.getMinutes();
+        document.getElementById("detik").innerHTML = waktu.getSeconds();
+      }
+    </script>
 
 </body>
 

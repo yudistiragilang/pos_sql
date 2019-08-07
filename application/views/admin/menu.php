@@ -1,4 +1,4 @@
- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -52,6 +52,11 @@
                      <li>
                         <a class="alert-logout" href="<?php echo base_url().'administrator/logout'?>"><span class="fa fa-sign-out"></span> Logout</a>
                     </li>
+
+                    <li style="color:#fcc;">
+                        <a href="!#"><?php echo date('d-M-Y') ?> - <b id="jam"></b> : <b id="menit"></b> : <b id="detik"></b></a>
+                    </li>
+
                 </ul>
 
 
@@ -89,3 +94,15 @@
             });
     });
   </script>
+
+  <script>
+      window.setTimeout("waktu()", 1000);
+
+      function waktu() {
+        var waktu = new Date();
+        setTimeout("waktu()", 1000);
+        document.getElementById("jam").innerHTML = waktu.getHours();
+        document.getElementById("menit").innerHTML = waktu.getMinutes();
+        document.getElementById("detik").innerHTML = waktu.getSeconds();
+      }
+    </script>
