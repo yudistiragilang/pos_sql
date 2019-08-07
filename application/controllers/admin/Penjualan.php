@@ -19,7 +19,8 @@ class Penjualan extends CI_Controller{
 	function index(){
 
 		if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
-
+			$kobar=$this->input->post('kode_brg');
+			$data['brg']=$this->m_barang->get_barang($kobar);
 			$data['data']=$this->m_barang->tampil_barang();
 			$this->load->view('admin/v_penjualan',$data);
 

@@ -14,7 +14,7 @@
 		                </tr>
 						<tr>
 							<!-- <th style="width:200px;"></th> -->
-							<!-- <td><input type="text" name="nabar" value="<?php /*echo $b['barang_nama'];*/ ?>" style="width:380px;margin-right:5px;" class="form-control input-sm" readonly></td> -->
+							<!-- <td><input type="text" id="nabarr" name="nabar" value="<?php /*echo $b['barang_nama'];*/ ?>" style="width:380px;margin-right:5px;" class="form-control input-sm" readonly></td> -->
 		                    <td><input type="text" name="satuan" value="<?php echo $b['nama_uom'];?>" style="width:120px;margin-right:5px;" class="form-control input-sm" readonly></td>
 		                    <td><input type="text" name="stok" value="<?php echo $b['barang_stok'];?>" style="width:40px;margin-right:5px;" class="form-control input-sm" readonly></td>
 		                    <td><input type="text" name="harjul" value="<?php echo number_format($b['barang_harjul']);?>" style="width:120px;margin-right:5px;text-align:right;" class="form-control input-sm" readonly></td>

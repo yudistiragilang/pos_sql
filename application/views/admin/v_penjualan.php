@@ -221,7 +221,7 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="<?php echo base_url().'assets/js/jquery.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/jquerys.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -238,6 +238,7 @@
                 var total=$('#total').val();
                 var jumuang=$('#jml_uang').val();
                 var hsl=jumuang.replace(/[^\d]/g,"");
+                console.log('Total :' + total + 'Jumlah Uang :' + jumuang + 'Hasil : ' + jumuang);
                 $('#jml_uang2').val(hsl);
                 $('#kembalian').val(hsl-total);
             })
@@ -278,31 +279,35 @@
         });
     </script>
     <script type="text/javascript">
+        <?php
+            $b=$brg->row_array();
+        ?>
         $(document).ready(function(){
             //Ajax kabupaten/kota insert
             $("#kode_brg").focus();
             $("#kode_brg").on("input",function(){
                 var kobar = {kode_brg:$(this).val()};
                    $.ajax({
-               type: "POST",
-               url : "<?php echo base_url().'admin/penjualan/get_barang';?>",
-               data: kobar,
-               success: function(msg){
-               $('#detail_barang').html(msg);
-               }
-            });
+                   type: "POST",
+                   url : "<?php echo base_url().'admin/penjualan/get_barang';?>",
+                   data: kobar,
+                   success: function(msg){
+                   $('#detail_barang').html(msg);
+                   console.log(document.getElementById("#nabarr"));
+                   }
+                });
             }); 
 
             $("#nabar").on("input",function(){
                 var nabar = {nabar:$(this).val()};
                    $.ajax({
-               type: "POST",
-               url : "<?php echo base_url().'admin/penjualan/get_barang';?>",
-               data: nabar,
-               success: function(msg){
-               $('#detail_barang').html(msg);
-               }
-            });
+                   type: "POST",
+                   url : "<?php echo base_url().'admin/penjualan/get_barang';?>",
+                   data: nabar,
+                   success: function(msg){
+                   $('#detail_barang').html(msg);
+                   }
+                });
             }); 
 
             $("#kode_brg").keypress(function(e){
