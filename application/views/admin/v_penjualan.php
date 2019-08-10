@@ -33,7 +33,6 @@
 
     <!-- Page Content -->
     <div class="container">
-
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -49,23 +48,33 @@
         <div class="row">
             <div class="col-lg-12">
             <form action="<?php echo base_url().'admin/penjualan/add_to_cart'?>" method="post">
-            <div class="col-lg-6 row">
-                <table>
+            <!-- <div class="col-lg-12 row"> -->
+                <table class="table">
                     <tr>
-                        <th>Kode Barang</th>
-                        <th></th>
+                        <th>Kode Barang <a data-toggle="modal" id="ScanKode" data-target="#ModalScan">[ <i class="fa fa-qrcode"></i> ]</a></th>
                         <th>Nama Barang</th>
+                        <th>Satuan</th>
+                        <th>Stok</th>
+                        <th>Harga(Rp)</th>
+                        <th>Diskon(Rp)</th>
+                        <th>Jumlah</th>
+                        <th></th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="kode_brg" id="kode_brg" class="form-control input-sm" placeholder="BR..."></td>
-                        <td style="width:10px;"> </td>
-                        <td style="width:380px;"><input type="text" name="nabar" id="nabar" class="form-control input-sm" placeholder="Nama Barang"></td>
+                        <td style="width:150px;"><input type="text" name="kode_brg" id="kode_brg" class="form-control input-sm" placeholder="BR..."></td>
+                        <td style="width:250px;"><input type="text" name="nabar" id="nabar" class="form-control input-sm" placeholder="Nama Barang"></td>
+                        <td><input type="text" id="satuan" name="satuan" value="" class="form-control input-sm" readonly></td>
+                        <td><input type="text" id="stok" name="stok" value="" class="form-control input-sm" style="width:60px;" readonly></td>
+                        <td><input type="text" id="harjul" name="harjul" value="" class="form-control input-sm" readonly></td>
+                        <td><input type="number" name="diskon" id="diskon" value="0" min="0" max="100" class="form-control input-sm" style="width:80px;" required></td>
+                        <td><input type="number" name="qty" id="qty" value="1" min="1" max="" class="form-control input-sm" style="width:80px;" required></td>
+                        <td><button type="submit" class="btn btn-sm btn-primary">Ok</button></td>
                     </tr>
                 </table>
-            </div>
-            <div class="col-lg-6 row">
+            <!-- </div> -->
+            <!-- <div class="col-lg-6 row">
                 <div id="detail_barang" style="position:absolute;"></div>
-            </div>
+            </div> -->
             </form>
         </div>
     </div>
@@ -204,6 +213,40 @@
 
         <!-- ============ MODAL HAPUS =============== -->
 
+        <!-- ============ Modal Scan Kode Barang =============== -->
+        <!-- Small modal -->
+        
+<div id="ModalScan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Scan Kode Barang</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <!-- <div id="tes"></div> -->
+          <input type="hidden" name="hasil_scan" id="hasil_scan" class="form-control">
+          <input type="hidden" name="nama_brg" id="nama_brg" class="form-control">
+          <input type="hidden" name="satuan" id="satuan" class="form-control">
+          <input type="hidden" name="stok" id="stok" class="form-control">
+          <input type="hidden" name="harga" id="harga" class="form-control">
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+              <video width="320" height="240" id="preview" class="img-thumbnail"></video>
+              <div id="tes"></div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info" onclick="mySave()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
         <!--END MODAL-->
 
@@ -232,6 +275,79 @@
     <script src="<?php echo base_url().'assets/js/jquery.price_format.min.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/moment.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/bootstrap-datetimepicker.min.js'?>"></script>
+
+<script src="<?php echo base_url().'assets/js/instascan.min.js'?>"></script>
+<script type="text/javascript">
+let scanner = new Instascan.Scanner({
+    video: document.getElementById('preview')
+});
+scanner.addListener('scan', function (content) {
+    $('#hasil_scan').val(content);
+
+    $('#tes').html(content);
+        <?php
+            $b=$brg->row_array();
+        ?>
+        $.ajax({
+          url: '<?= base_url()?>admin/penjualan/get_scan',
+          method: 'post',
+          data: {'content': content},
+          dataType: "json",
+          beforeSend: function (e) {
+            if (e && e.overrideMimeType) {
+              e.overrideMimeType("application/json;charset=UTF-8");
+            }
+          },
+          success: function (response, msg) { 
+            //$("#detail_barang").load("<?php echo base_url().'admin/penjualan/get_barang'; ?>");
+            $("#nama_brg").val(response.nabar);
+            $("#satuan").val(response.satuan);
+            $("#stok").val(response.stok);
+            $("#harjul").val(response.harjul);
+            console.log('nabar: ' + response.nabar + ', satuan: ' + response.satuan + ', stok: ' + response.stok + ', harjul: ' + response.harjul);
+          },
+          error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+            alert('Maaf kode barang tidak ditemukan. \n Error : ' + thrownError); // Munculkan alert error
+          }
+        });
+});
+var myLink = document.getElementById('ScanKode');
+myLink.onclick = function () {
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+
+        if (cameras[1]) {
+            scanner.start(cameras[1]);
+        } else {
+            scanner.start(cameras[0]);
+        }
+
+    }).catch(function (e) {
+
+        console.error(e);
+
+    });
+}
+
+function mySave() {
+document.getElementById("kode_brg").value = document.getElementById("hasil_scan").value;
+document.getElementById("nabar").value = document.getElementById("nama_brg").value;
+}
+
+/* Modal Scan Kode */
+$(document).ready(function(){
+    /*$("#ModalScan").on('shown.bs.modal', function(){
+        $(this).find('#hasil_scan').focus();
+
+    });*/
+    /*$(".custom-close").on('click', function() {
+        document.getElementById("kode_brg").value = document.getElementById("hasil_scan").value;
+        $('#ModalScan').modal('hide');
+    });*/
+});
+
+</script>
+
     <script type="text/javascript">
         $(function(){
             $('#jml_uang').on("input",function(){
@@ -282,7 +398,7 @@
         <?php
             $b=$brg->row_array();
         ?>
-        $(document).ready(function(){
+        /*$(document).ready(function(){
             //Ajax kabupaten/kota insert
             $("#kode_brg").focus();
             $("#kode_brg").on("input",function(){
@@ -293,7 +409,6 @@
                    data: kobar,
                    success: function(msg){
                    $('#detail_barang').html(msg);
-                   console.log(document.getElementById("#nabarr"));
                    }
                 });
             });
@@ -315,7 +430,7 @@
                     $("#jumlah").focus();
                 }
             });
-        });
+        });*/
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -329,7 +444,6 @@
                     $('[name="harjul"]').val(ui.item.harjul);
                     $('[name="diskon"]').val(ui.item.diskon);
                     $('[name="qty"]').val(ui.item.qty);
-                    $('[name="qty"]').val(ui.item.qty);
                 }
             });
 
@@ -341,7 +455,6 @@
                     $('[name="stok"]').val(ui.item.stok);
                     $('[name="harjul"]').val(ui.item.harjul);
                     $('[name="diskon"]').val(ui.item.diskon);
-                    $('[name="qty"]').val(ui.item.qty);
                     $('[name="qty"]').val(ui.item.qty);
                 }
             });

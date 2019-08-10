@@ -64,6 +64,24 @@ class Penjualan extends CI_Controller{
 
 	}
 
+	public function get_scan(){
+	$postData = $this->input->post();
+	$this->db->select('*');
+	$this->db->where('barang_id', $postData['content']);
+	$this->db->join('tbl_uom', 'id = barang_uom_id');
+	$q = $this->db->get('tbl_barang');
+	$response = $q->result_array();
+	foreach ($response as $row)
+	$callback = array(
+		'nabar'		=> $row['barang_nama'],
+		'satuan'	=> $row['nama'],
+		'stok'		=> $row['barang_stok'],
+		'harjul'	=> $row['barang_harjul'],
+		'qty'		=> 1,
+	);
+	echo json_encode($callback);
+	}
+
 	function get_autocomplete_kobar(){
 		if (isset($_GET['term'])) {
 		  	$result = $this->m_penjualan->barang_id($_GET['term']);
