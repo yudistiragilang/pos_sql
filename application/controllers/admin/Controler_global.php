@@ -29,6 +29,7 @@ class Controler_global extends CI_Controller{
 
 	    for ($i=3; $i <= ($data->rowcount($sheet_index=0)); $i++){ 
 
+	    	$Col_1 = $data->val($i, 1);
 	    	$Col_2 = $data->val($i, 2);
 	    	$Col_3 = $data->val($i, 3);
 	    	$Col_4 = $data->val($i, 4);
@@ -74,7 +75,7 @@ class Controler_global extends CI_Controller{
 
 		    	if($tipe == BARANG){
 
-			    	$simpan = $this->$classnya->$methodnya($kobar, $Col_2, $Col_3, $Col_4, $Col_5, $Col_6, $Col_7, $Col_8, $Col_9, $Col_10);
+			    	$simpan = $this->$classnya->$methodnya($Col_1, $Col_2, $Col_3, $Col_4, $Col_5, $Col_6, $Col_7, $Col_8, $Col_9, $Col_10);
 
 			    }else{
 

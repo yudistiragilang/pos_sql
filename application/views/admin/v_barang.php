@@ -219,7 +219,7 @@
                         $min_stok=$a['barang_min_stok'];
                         $kat_id=$a['barang_kategori_id'];
                         $kat_nama=$a['kategori_nama'];
-                        $uom_id=$a['id'];
+                        $uom_id=$a['barang_uom_id'];
                         $uom_nama=$a['nama_uom'];
                     ?>
                 <div id="modalEditBarang<?php echo $id?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -273,10 +273,11 @@
                                         foreach ($uom->result_array() as $u3) {
                                             $id_uom=$u3['id'];
                                             $nm_uom=$u3['nama'];
-                                            if($id_uom==$uom_id)
+                                            if($id_uom==$uom_id){
                                                 echo "<option value='$id_uom' selected>$nm_uom</option>";
-                                            else
+                                            }else{
                                                 echo "<option value='$id_uom'>$nm_uom</option>";
+                                            }
                                         }
                                     ?>
                                 </select>

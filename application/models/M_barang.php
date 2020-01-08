@@ -1,4 +1,5 @@
 <?php
+
 class M_barang extends CI_Model{
 
 	function hapus_barang($kode){
@@ -111,6 +112,21 @@ class M_barang extends CI_Model{
             $kd = "000001";
         }
         return "BR".$kd;
+
+	}
+
+	function cek_kode_exist($kode){
+
+		$q = $this->db->query("SELECT barang_id FROM tbl_barang WHERE barang_id='$kode'");
+        if($q->num_rows()>0){
+
+        	return FALSE;
+
+        }else{
+
+            return TRUE;
+        
+        }
 
 	}
 
