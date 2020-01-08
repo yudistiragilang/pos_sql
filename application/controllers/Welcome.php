@@ -1,5 +1,7 @@
 <?php
+
 class Welcome extends CI_Controller{
+
 	function __construct(){
 		parent::__construct();
 		if($this->session->userdata('masuk') !=TRUE){
@@ -11,4 +13,5 @@ class Welcome extends CI_Controller{
 	function index(){
 		$this->load->view('admin/v_index');
 	}
+
 }
