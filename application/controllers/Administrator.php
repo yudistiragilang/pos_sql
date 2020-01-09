@@ -5,7 +5,7 @@ class Administrator extends CI_Controller{
     function __construct(){
 
         parent:: __construct();
-        $this->load->model('Mlogin');
+        $this->load->model('Mlogin', 'mlogin');
    
     }
 
@@ -52,11 +52,11 @@ class Administrator extends CI_Controller{
 
         if($this->session->userdata('masuk')==true){
 
-            redirect('Administrator/berhasillogin');
+            redirect('administrator/berhasillogin');
         
         }else{
 
-            redirect('Administrator/gagallogin');
+            redirect('administrator/gagallogin');
         
         }
    
@@ -65,13 +65,13 @@ class Administrator extends CI_Controller{
     function berhasillogin(){
         
         $this->session->set_flashdata('sukses', $this->session->userdata('nama').'! Kamu Berhasil Login');
-        redirect('Welcome');
+        redirect('welcome');
     
     }
     
     function gagallogin(){
     
-        $url=base_url('Administrator');
+        $url=base_url('administrator');
         echo $this->session->set_flashdata('msg','Username Atau Password Salah');
         redirect($url);
     }
@@ -79,7 +79,7 @@ class Administrator extends CI_Controller{
     function logout(){
         
         $this->session->sess_destroy();
-        $url=base_url('Administrator/logout_flashdata');
+        $url=base_url('administrator/logout_flashdata');
         redirect($url);
     
     }
@@ -87,7 +87,7 @@ class Administrator extends CI_Controller{
     function logout_flashdata() {
     
         $this->session->set_flashdata('sukses', $this->session->userdata('nama').'Kamu Berhasil Logout');
-        redirect('Administrator');
+        redirect('administrator');
     
     }
 

@@ -22,7 +22,7 @@
 			                <img width="310px" src="<?php echo base_url().'assets/img/logo.png'?>"/>
 			                <p><?php echo $this->session->flashdata('msg');?></p>
 	                        <hr/>
-	                        <form action="<?php echo base_url().'Administrator/cekuser'?>" method="post">
+	                        <form action="<?php echo base_url().'administrator/cekuser'?>" method="post">
 	                        	<input class="form-control" type="text" name="username" placeholder="Username" required>
 				                <input class="form-control" type="password" name="password" placeholder="Password" style="margin-bottom:1px;" required>
 				                <div class="action">
